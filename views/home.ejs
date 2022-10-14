@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2><%= title %></h2>
+
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Impressions</th>
+        <th>Clicks</th>
+        <th>25% viewed</th>
+        <th>50% viewed</th>
+        <th>75% viewed</th>
+        <th>100% viewed</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% for(var i=0; i < data.length; i++) { %>
+      <tr>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].log_date %></td>
+        <td><%= data[i].impression_count %></td>
+        <td><%= data[i].click_count %></td>
+        <td><%= data[i]['25viewed_count'] %></td>
+        <td><%= data[i]['50viewed_count'] %></td>
+        <td><%= data[i]['75viewed_count'] %></td>
+        <td><%= data[i]['100viewed_count'] %></td>
+
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</body>
+</html>
